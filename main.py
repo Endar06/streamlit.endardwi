@@ -1,15 +1,23 @@
 import streamlit as st 
+from streamlit_option_menu import option_menu
 
-st.markdown("*Streamlit* is **really** ***cool***.")
-st.markdown('''
-    :red[Streamlit] :orange[can] :green[write] :blue[text] :violet[in]
-    :gray[pretty] :rainbow[colors] and :blue-background[highlight] text.''')
-st.markdown("Here's a bouquet &mdash;\
-            :tulip::cherry_blossom::rose::hibiscus::sunflower::blossom:")
 
-multi = '''If you end a line with two spaces,
-a soft return is used for the next line.
+st.title("Portofolio Saya")
+st.header("Data Scientist & Data analyst")
+#st.write("**Perkenalkan saya Endar Dwi Haryanto, dan ini adalah project kalkulator suhu sederhana saya di streamlit**")
 
-Two (or more) newline characters in a row will result in a hard return.
-'''
-st.markdown(multi)
+with st.sidebar:
+    selected = option_menu('Pilih Halaman',
+    ['Tentang Saya',
+     'Proyek', 'Kontak'],                       
+    default_index=0)
+    
+if selected == 'Proyek':
+    import kalkulator
+    kalkulator.konversi_suhu()
+elif selected == 'Kontak':
+    import kontak
+    kontak.tampilkan_kontak()
+elif selected == 'Tentang Saya':
+    import tentang
+    tentang.tentang()
