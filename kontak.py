@@ -10,7 +10,7 @@ def tampilkan_kontak():
 
     📧 *Email*: endardwi507@gmail.com  
 
-    📱 *Telepon/WA*: ‪+62 822-4947-2469‬  
+    📱 *Telepon/WA*: +62 822-4947-2469  
     """)
 
     with st.form("form_kontak"):
